@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python run_dev_app.py
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    ports:
+    - 1234:1234
